@@ -1,0 +1,22 @@
+{
+  "name": "highlightbutton",
+  "version": "1.0.0",
+  "description": "a button that applies our highlight style",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "symlink-plugin-to-ckeditor": "ln -s ../../highlightbutton ckeditor/plugins/highlightbutton",
+    "test": "bender run"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "benderjs": "^0.4.1",
+    "benderjs-ckeditor": "^0.1.0",
+    "benderjs-cli": "^0.1.1",
+    "benderjs-jquery": "^0.3.0",
+    "benderjs-sinon": "^0.3.1",
+    "benderjs-yui": "^0.3.3"
+  }
+}
