@@ -25,14 +25,16 @@ bender.test({
   "test no-op with collapsed selection": function() {
     var bot = this.editorBot;
     var initialHtml = "<p>^foo</p>";
+    var initialHtmlWithoutSelection = "<p>foo</p>";
     bot.setHtmlWithSelection(initialHtml);
     bot.execCommand(cmdName);
 
-    var updatedContent = bender.tools.getHtmlWithSelection(
-      this.editorBot.editor
-    );
+    // we can't use getHtmlWithSelection here.
+    // technically this places the caret inside a highlight span,
+    // but if the user never types, the span will go away when actually retrieving editor data.
+    var updatedContent = this.editorBot.editor.getData();
     assert.areSame(
-      initialHtml,
+      initialHtmlWithoutSelection,
       updatedContent,
       "nothing happens in a collapsed selection"
     );
