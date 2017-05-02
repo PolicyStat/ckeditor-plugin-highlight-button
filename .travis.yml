@@ -9,6 +9,5 @@ before_script:
   - npm install
 env:
   - NPM_CMD=test
-  - NPM_CMD=lint
 script:
   - "npm run-script $NPM_CMD"
