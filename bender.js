@@ -24,40 +24,26 @@
  */
 
 var config = {
-    applications: {
-        ckeditor: {
-            path: '.',
-            files: [
-                'ckeditor.js',
-            ]
-        }
-    },
-
-    framework: 'yui', // use for entire project
-
-    plugins: [
-        'benderjs-yui',
-        'benderjs-jquery',
-        'benderjs-sinon',
-        'tests/_benderjs/ckeditor'
-    ],
-
-    tests: {
-        'highlightbutton': {
-            applications: ['ckeditor'],
-            basePath: 'tests/',
-            paths: [
-                'smoke/**',
-                'highlightbutton/**',
-                '!**/_*/**'
-            ],
-            // Latest of the old API (1.8.3)
-            // Latest of the 1.* branch
-            // Latest of the 2.* branch
-            jQuery: ['1.8.3', '1.11.1', '2.1.1']
-        }
+  applications: { ckeditor: { path: "ckeditor", files: ["ckeditor.js"] } },
+  framework: "yui",
+  // use for entire project
+  plugins: [
+    "benderjs-yui",
+    "benderjs-jquery",
+    "benderjs-sinon",
+    "ckeditor/tests/_benderjs/ckeditor"
+  ],
+  tests: {
+    highlightbutton: {
+      applications: ["ckeditor"],
+      basePath: "tests/",
+      paths: ["smoke/**", "highlight/**", "!**/_*/**"],
+      // Latest of the old API (1.8.3)
+      // Latest of the 1.* branch
+      // Latest of the 2.* branch
+      jQuery: ["1.8.3", "1.11.1", "2.1.1"]
     }
-
+  }
 };
 
 module.exports = config;
