@@ -7,9 +7,16 @@
   },
   "scripts": {
     "symlink-plugin-to-ckeditor": "ln -s ../../highlightbutton ckeditor/plugins/highlightbutton",
-    "test": "bender run"
+    "test": "bender run",
+     "precommit": "lint-staged"
   },
-  "author": "",
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "author": "Alex Tsai",
   "license": "MIT",
   "devDependencies": {
     "benderjs": "^0.4.1",
@@ -17,6 +24,9 @@
     "benderjs-cli": "^0.1.1",
     "benderjs-jquery": "^0.3.0",
     "benderjs-sinon": "^0.3.1",
-    "benderjs-yui": "^0.3.3"
+    "benderjs-yui": "^0.3.3",
+    "husky": "^0.13.3",
+    "lint-staged": "^3.4.1",
+    "prettier": "^1.2.2"
   }
 }
