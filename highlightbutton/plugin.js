@@ -2,7 +2,7 @@
 (function() {
   CKEDITOR.plugins.add("highlightbutton", {
     requires: "toolbar",
-    icons: "highlight",
+    icons: "highlightbutton",
     highlightStyleDef: {
       name: "Highlight",
       element: "span",
